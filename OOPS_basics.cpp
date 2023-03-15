@@ -8,9 +8,18 @@ class Student{
 
         int rollnumber;
 
-    void setAge(int a){
+//     Setter
+    void setAge(int a, int password){
+        if(a<0){
+            return;
+        }
+        if(password!=123){
+            return;
+        }
         age=a;
     }    
+    
+//     Getter
     int getAge(){
         return age;
     }
