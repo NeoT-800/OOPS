@@ -65,6 +65,32 @@ class Fraction{
         bool operator==(Fraction const &f2) const{
             return (numerator==(f2.numerator) && denominator==(f2.denominator));
         }
+        // Pre-increment
+        Fraction& operator++() {
+            numerator = numerator + denominator;
+            simplify();
+            return *this;
+        }
+        // Post-increment
+        Fraction operator++(int) {
+            Fraction fNew(numerator, denominator);
+            numerator = numerator + denominator;
+            simplify();
+            fNew.simplify();
+            return fNew;
+        }
+        // Short-hand addition operator overloaded
+        Fraction& operator+=(Fraction const &f2) {
+            int lcm = denominator * f2.denominator;
+            int x = lcm / denominator;
+            int y = lcm / f2.denominator;
+            int num = x * numerator + (y * f2.numerator);
+            numerator = num;
+            denominator = lcm;
+            simplify();
+            return *this;
+         }
+
 };
 
 int main(){
