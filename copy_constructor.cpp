@@ -30,6 +30,8 @@ class Student{
         this -> name = new char[strlen(s.name)+1];  // Deep copy
         strcpy(this -> name, s.name);
     }
+    
+      // Note: Deep memory allocates different memory for the copied task. It is generally used when we assign the dynamic memory using pointers.
 
     void display(){
         cout<<age<<" "<<name<<endl;
