@@ -15,7 +15,10 @@ class Fraction{
             this -> numerator = numerator;
             this -> denominator = denominator;
         }
-        int getNumerator() const{
+    
+//     Note:  Constant functions are those which don’t change any property of current objects. Only constant objects of the class could invoke these.
+        
+    int getNumerator() const{
             return numerator;
         }
         int getDenominator() const{
