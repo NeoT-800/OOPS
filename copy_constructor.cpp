@@ -25,7 +25,7 @@ class Student{
     }
 
     // Copy Constructor
-    Student(Student const &s){
+    Student(Student const &s){  // keyword const assured us that original copy is unchanged.
         this -> age = s.age;  // Shallow copy
         this -> name = new char[strlen(s.name)+1];  // Deep copy
         strcpy(this -> name, s.name);
